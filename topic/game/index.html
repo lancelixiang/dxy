@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>大西洋娱乐城--真人娱乐</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="stylesheet" type="text/css" href="/static/css/public/base.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/public/swiper.min.css" />
+	<script type="text/javascript" src="/static/js/public/base.min.js"></script>
+	<script type="text/javascript" src="/static/js/public/swiper.min.js"></script>
+	<style>
+		body{
+			margin-bottom:1.5rem;
+		}
+		img{
+			display: block;
+		}
+		.ui-header{
+			padding: 0.25rem 0;
+		}
+		.ui-header >section{
+			display: -ms-flex;
+			display: -webkit-flex;
+			display: flex;
+			-ms-flex-align: center;
+			-webkit-align-items: center;
+			-webkit-box-align: center;
+			align-items: center;
+		}
+        .ui-header >section .logout{
+            overflow: hidden;
+        }
+        .ui-header > section span{
+            display: inline-block;
+            vertical-align: top;
+            max-width:2rem;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            word-break: keep-all;
+            white-space: nowrap;
+        }
+		.logo {
+			padding-left:0.2rem;
+			width: auto;
+			height: 0.6rem;
+		}
+		.swiper-slide {
+			display: block;
+		}
+		.game .nav{
+			overflow: hidden;
+		}
+		.nav li{
+			width:25%;
+			box-sizing: border-box;
+			background: #252525;
+			height:0.68rem;
+			line-height:0.68rem;
+			color: #fffefe;
+			float: left;
+			text-align: center;
+			font-size:0.26rem;
+			border-right:1px solid #3c3c3c;
+			border-bottom:1px solid #3c3c3c;
+			transition:all 0.6s;
+		}
+		.nav li:nth-child(n+5) {
+			border-bottom:none;
+		}
+		.nav li:nth-child(4n) {
+			border-right:none;
+		}
+		.nav li.current{
+			color: #000000 ;
+			background: #fff10b;
+		}
+		.game .content {
+			padding:0.4rem 0.3rem;
+			overflow: hidden;
+		}
+		.game .content li{
+			margin:0 1%;
+			margin-top:0.2rem;
+			float: left;
+			padding:0.07rem 0.04rem;
+			width:30%;
+			background: #232323;
+		}
+		.game .content li p{
+			height:0.5rem;
+			line-height:0.5rem;
+			color: #ffffff;
+			font-size:0.26rem;
+			text-align: center;
+		}
+	</style>
+	<script>
+		$(function () {
+			//banner
+			var banner = new Swiper('#banner', {
+				pagination: '.swiper-pagination',
+				paginationClickable: true,
+				autoplay: 5000,
+				loop: true,
+				autoplayDisableOnInteraction: false
+			});
+
+			//游戏
+			var game = new Swiper('#game-box', {
+//				autoplay: 5000,
+				//滑动开始
+				onSlideChangeStart: function (swiper) {
+
+				},
+				//滑动完成
+				onSlideChangeEnd: function (swiper) {
+					var index = swiper.activeIndex;
+					console.log(index)
+					$('#game-nav li').eq(index).addClass('current').siblings().removeClass('current');
+				}
+			});
+			//导航点击切换效果
+			$('#game-nav li').click(function () {
+				var index = $(this).index();
+				game.slideTo(index, 300, true);
+			});
+		});
+
+	</script>
+</head>
+
+<body class="">
+	<header class="ui-header bg-dark-black">
+		<div>
+            <img class="logo" alt="大西洋" src="/static/images/public/logo.png" />
+		</div>
+		<section class="username">
+			<!--未登录-->
+            <div class="logout">
+                <a href="/login.html" class="color-yellow fr plr10">登录</a>
+				<a href="/register.html" class="color-yellow fr plr10">注册</a>
+            </div>
+			<!--已登陆-->
+<!--            <a href="/user" class="color-yellow ft-28 _pr30">
+                你好,<span class="color-blue">够了</span>!
+            </a>-->
+		</section>
+	</header>
+
+	<div class="swiper-container" id="banner">
+		<div class="banner-wrapper swiper-wrapper">
+			<a href="/topic/" class="swiper-slide">
+				<img src="/static/images/banner/4.jpg" />
+			</a>
+		</div>
+		<ul class="swiper-pagination">
+		</ul>
+	</div>
+	<!--真人娱乐城-->
+	<div class="game">
+		<ul class="nav" id="game-nav">
+			<li class="current">热门游戏</li>
+			<li>经典老虎机</li>
+			<li>电动角子老虎</li>
+			<li>视频扑克</li>
+			<li>街机游戏</li>
+			<li>积累游戏</li>
+			<li>乐透刮刮乐</li>
+			<li>其它</li>
+		</ul>
+		<ul class="swiper-container" id="game-box">
+			<div class="swiper-wrapper">
+				<li class="swiper-slide">
+					<ul class="content">
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>热门游戏</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>热门游戏</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>热门游戏</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>热门游戏</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>热门游戏</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>热门游戏</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>热门游戏</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>热门游戏</p> </li>
+					</ul>
+				</li>
+				<li class="swiper-slide">
+					<ul class="content">
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>经典老虎机</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>经典老虎机</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>经典老虎机</p> </li>
+					</ul>
+				</li>
+				<li class="swiper-slide">
+					<ul class="content">
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>电动角子老虎</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>电动角子老虎</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>电动角子老虎</p> </li>
+					</ul>
+				</li>
+				<li class="swiper-slide">
+					<ul class="content">
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>视频扑克</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>视频扑克</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>视频扑克</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>视频扑克</p> </li>
+					</ul>
+				</li>
+				<li class="swiper-slide">
+					<ul class="content">
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>街机游戏</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>街机游戏</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>街机游戏</p> </li>
+					</ul>
+				</li>
+				<li class="swiper-slide">
+					<ul class="content">
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>积累游戏</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>积累游戏</p> </li>
+					</ul>
+				</li>
+				<li class="swiper-slide">
+					<ul class="content">
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>乐透刮刮乐</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>乐透刮刮乐</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>乐透刮刮乐</p> </li>
+					</ul>
+				</li>
+				<li class="swiper-slide">
+					<ul class="content">
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>其它</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>其它</p> </li>
+						<li><img src="/static/images/game/1.jpg" alt=""> <p>其它</p> </li>
+					</ul>
+				</li>
+			</div>
+
+		</ul>
+	</div>
+
+
+	<!--导航-->
+	<div class="ui-tabbar-footer">
+		<div class="">
+			<a href="/">
+				<div class="icons-box"><i class="icon-home1"></i></div>
+				<span>&emsp;首页&emsp;</span>
+			</a>
+		</div>
+		<div>
+			<a href="/topic/real">
+				<div class="icons-box"><i class="icon-qipai1"></i></div>
+				<span>真人娱乐</span>
+			</a>
+		</div>
+		<div class="current">
+			<a href="/topic/game">
+				<div class="icons-box"><i class="icon-7"></i></div>
+				<span>电子游艺</span>
+			</a>
+		</div>
+		<div>
+			<a href="/user/index.html">
+				<div class="icons-box"><i class="icon-gerenzhongxin"></i></div>
+				<span>个人中心</span>
+			</a>
+		</div>
+	</div>
+</body>
+
+</html>
